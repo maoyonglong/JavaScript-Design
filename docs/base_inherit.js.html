@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>base/inhert.js - JavaScript-Design</title>
+    <title>base/inherit.js - JavaScript-Design</title>
     
     <meta name="description" content="A pure JavaScript library in Object-oriented Design" />
     
@@ -34,12 +34,12 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h2><a href="" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><h3>Namespaces</h3><ul><li><a href="Inherit.html">Inherit</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Inherit.html#.classInherit">classInherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#.combineInherit">combineInherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#.constructorInherit">constructorInherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#.inherit">inherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#.ObjectInherit">ObjectInherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#Inherit">Inherit</a></li></ul></li><li><a href="TypeHelper.html">TypeHelper</a><ul class='methods'><li data-type='method' style='display: none;'><a href="TypeHelper.html#.is">is</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#capitalize">capitalize</a></li><li><a href="global.html#mixin">mixin</a></li><li><a href="global.html#mixinMany">mixinMany</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2><a href="" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><h3>Namespaces</h3><ul><li><a href="Inherit.html">Inherit</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Inherit.html#.classInherit">classInherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#.combineInherit">combineInherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#.constructorInherit">constructorInherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#.inherit">inherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#.ObjectInherit">ObjectInherit</a></li><li data-type='method' style='display: none;'><a href="Inherit.html#Inherit">Inherit</a></li></ul></li><li><a href="Type.html">Type</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Type.html#.is">is</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isArray">isArray</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isBoolean">isBoolean</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isFalsy">isFalsy</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isFunction">isFunction</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isNan">isNan</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isNull">isNull</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isNumber">isNumber</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isObject">isObject</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isString">isString</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isTruthy">isTruthy</a></li><li data-type='method' style='display: none;'><a href="Type.html#.isUndefined">isUndefined</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#capitalize">capitalize</a></li><li><a href="global.html#mixin">mixin</a></li><li><a href="global.html#mixinMany">mixinMany</a></li></ul>
 </nav>
 
 <div id="main">
     
-    <h1 class="page-title">base/inhert.js</h1>
+    <h1 class="page-title">base/inherit.js</h1>
     
 
     
@@ -119,8 +119,8 @@ var Inherit = {
    * 组合式继承
    * combinatorial Inheritance
    * @method
-   * @param { function } SubClass 子类
-   * @param { function } SuperClass 父类
+   * @param { function } SubClass 子类 SubClass
+   * @param { function } SuperClass 父类 SuperClass
    * @return { function } a new constructor to instantiate SubClass 经过封装的用于实例化子类的构造函数
    * @description
    * 这是同时使用classInherit和constructorInherit的继承方式，返回的结果和constructorInherit一样
@@ -156,8 +156,8 @@ var Inherit = {
   /**
    * 寄生组合式继承
    * parasitic combinatorial inheritance
-   * @param { function } SubClass
-   * @param { function } SuperClass
+   * @param { function } SubClass 子类 SubClass
+   * @param { function } SuperClass 父类 SuperClass
    * @example
    * function Teacher (name) {
    *  this.name = name
@@ -181,7 +181,7 @@ var Inherit = {
    * 继承方法 - 使用类型选择Inherit中的继承方法
    * Inherit function - call the Inherit methods by type
    * @method
-   * @param { string } type Inherit type 继承类型
+   * @param { string } type 继承类型 Inherit type
    * @return { function | object | undefined }
    * @example
    * Inherit.inherit('combine', Teacher, Person) => call Inherit.combineInherit()
